@@ -15,6 +15,8 @@ window.Accordion = (function(jQuery) {
         // If jQuery Object?
         const $accordions = transformToJqueryObject(target);
 
+        if ($accordions.length <= 0) throw 'Please insert a Selector/HTMLElement valid';
+
         $accordions.each((index, accordion) => {
             const $accordion = $(accordion);
             const $accordionBody = $accordion.find('.accordion-body');
@@ -83,4 +85,3 @@ window.Accordion = (function(jQuery) {
     };
 
 })(jQuery);
-
